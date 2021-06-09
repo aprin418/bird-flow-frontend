@@ -3,6 +3,7 @@ import birdvid from './videos/birdvid.mp4'
 const Welcome = (props) => {
     return (
         <div>
+<<<<<<< HEAD
           
             <section>
             <form className="bird_search_form">
@@ -22,6 +23,10 @@ const Welcome = (props) => {
                 </div>
             </form>
 
+=======
+          <section>
+            
+>>>>>>> 376f87d79ce6a1ad4767db11eebce7dc52fa0ae8
             <video autoPlay loop muted  className="video1">
              
                 <source src={birdvid} type="video/mp4"/>

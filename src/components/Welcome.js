@@ -1,20 +1,23 @@
 import React from 'react';
 import birdvid from './videos/birdvid.mp4'
-const Welcome = () => {
+const Welcome = (props) => {
     return (
         <div>
+          
             <section>
-            <form>
+            <form className="bird_search_form">
                 <div>
                     {/* search database on home page */}
-                <label>Name</label>  
-                <input></input>
+                <label className="HomeSearch">Name</label>  
+                <input className="birdSearch"></input>
 
-                <label>Region</label>  
-                <input></input>
+                <label className="HomeSearch">Region</label>  
+                <input className="birdSearch"></input>
 
-                <label>State</label>  
-                <input></input>
+                <label className="HomeSearch">State</label>  
+                <input className="birdSearch"></input>
+
+                <button className="btn btn-primary specialButton">Submit</button>
                 
                 </div>
             </form>
@@ -24,7 +27,7 @@ const Welcome = () => {
                 <source src={birdvid} type="video/mp4"/>
             </video>
             </section>
-            
+        
         </div>
     )
 }

@@ -10,7 +10,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
-
+  const [showError, setShowError] = useState(false)
   const handleName = (e) => {
     setName(e.target.value);
   };
@@ -55,6 +55,11 @@ const Signup = () => {
       }
     }
   };
+  const checkString = ()=>{
+    if (password.length <=8){
+      setShowError(true)
+    }
+  }
 
   if (redirect) return <Redirect to="/login" />;
 
@@ -86,11 +91,14 @@ const Signup = () => {
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
+              <div className={`error-message ${showError ? "show" : ""}`}> Password must be more than 8 characters </div>
               <input
                 type="password"
                 name="password"
                 value={password}
                 onChange={handlePassword}
+                onFocus={()=>setShowError(false)}
+                onBlur={()=>checkString()}
                 className="form-control"
               />
             </div>

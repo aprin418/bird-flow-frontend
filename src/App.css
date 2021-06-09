@@ -32,3 +32,13 @@ body {
   z-index: -1 !important;
 
 }
+
+form .error-message{
+  display: none;
+  font-size: .8rem;
+  color: red;
+}
+
+form .error-message.show{
+  display:block
+}

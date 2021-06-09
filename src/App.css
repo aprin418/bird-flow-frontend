@@ -33,6 +33,38 @@ body {
 
 }
 
+.birdSearch {
+  background-color: #FF9835 !important;
+  border-radius: 2em !important;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  color: white;
+  margin: 5px;
+  transition: 0.4s ease;
+  display: block;
+}
+
+.specialButton {
+  background-color: black;
+  border-radius: 2em;
+  margin: 5px;
+  color: rgb(255, 247, 237);
+}
+
+.HomeSearch {
+  color: white;
+  margin-right: 3px;
+  font-size: 25px;
+}
+
+.birdSearch:hover {
+  transition: 2.0s ease !important;
+  background-color: black !important;
+  border: 2px solid #FF9835 !important;
+
+}
+
 form .error-message{
   display: none;
   font-size: .8rem;
@@ -42,3 +74,4 @@ form .error-message{
 form .error-message.show{
   display:block
 }
+

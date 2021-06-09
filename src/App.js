@@ -30,7 +30,6 @@ function App() {
   // Set state values
   const [currentUser, setCurrentUser] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(true);
-
   useEffect(() => {
     let token;
     // check to see if there is not token inside of our local storage, then the user is authenticated
@@ -83,11 +82,10 @@ function App() {
            
       </Switch>
       </div>
-      
+    
       <Footer />
     </div>
   );
 }
-
 export default App;
 

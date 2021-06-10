@@ -1,6 +1,7 @@
 import React from "react";
 import birdvid from "./videos/birdvid.mp4";
 const Welcome = (props) => {
+
   return (
     <div>
       <section>
@@ -27,3 +28,4 @@ const Welcome = (props) => {
 };
 
 export default Welcome;
+

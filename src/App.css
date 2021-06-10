@@ -216,12 +216,14 @@ form .error-message.show{
   border-radius: 2em;
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
+  outline: none;
 }
 
 .signup-button:hover {
   border: 1px solid white;
   transition: 0.4s linear;
   background-color: #FF9835;
+  outline: none;
 }
 
 .signupform-name {

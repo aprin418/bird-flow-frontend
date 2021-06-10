@@ -56,7 +56,7 @@ const Signup = () => {
   };
 // WHAT I WROTE
   const checkString = ()=>{
-    if (password.length <=8){
+    if (password.length < 8){
       setShowError(true)
     }
   }
@@ -104,6 +104,7 @@ const Signup = () => {
 
                 onFocus={()=>setShowError(false)}
                 onBlur={()=>checkString()}
+                
               />
             </div>
             <div className="form-group">

@@ -64,55 +64,62 @@ const Signup = () => {
   if (redirect) return <Redirect to="/login" />;
 
   return (
-    <div className="row mt-4">
+    <div className="row mt-4 signup-bg">
       <div className="col-md-7 offset-md-3">
-        <div className="card card-body">
-          <h2 className="py-2">Signup</h2>
+        <div className="card card-body cardBorder2">
+          <h2 className="py-2 signupform-name">Signup</h2>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name" className="signuplabel">Name</label>
               <input
                 type="text"
                 name="name"
                 value={name}
                 onChange={handleName}
-                className="form-control"
+                className="form-control signup-input"
               />
             </div>
             <div className="form-group">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email" className="signuplabel">Email</label>
               <input
                 type="email"
                 name="email"
                 value={email}
                 onChange={handleEmail}
-                className="form-control"
+                className="form-control signup-input"
               />
             </div>
             <div className="form-group">
+
+              <label htmlFor="password" className="signuplabel">Password</label>
+
               <label htmlFor="password">Password</label>
               <div className={`error-message ${showError ? "show" : ""}`}> Password needs to be at least 8 characters or more. </div>
+
               <input
                 type="password"
                 name="password"
                 value={password}
                 onChange={handlePassword}
+
+                className="form-control signup-input"
+
                 onFocus={()=>setShowError(false)}
                 onBlur={()=>checkString()}
                 className="form-control"
               />
             </div>
             <div className="form-group">
-              <label htmlFor="confirmPassword">Confirm Password</label>
+              <label htmlFor="confirmPassword" className="signuplabel">Confirm Password</label>
               <input
                 type="password"
                 name="confirmPassword"
                 value={confirmPassword}
                 onChange={handleConfirmPassword}
-                className="form-control"
+                className="form-control signup-input"
               />
             </div>
-            <button type="submit" className="btn btn-primary float-right">
+            <button type="submit" className="btn btn-primary float-right signup-button">
               Submit
             </button>
           </form>

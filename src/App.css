@@ -21,6 +21,11 @@ body {
   z-index: 1000;
 }
 
+.nav-link:hover{
+  color:#FFAD84 !important;
+}
+
+
 .video1 {
   position:  absolute !important;
   top: 0 !important;
@@ -33,7 +38,6 @@ body {
 
 }
 
-<<<<<<< HEAD
 .birdSearch {
   background-color: #FF9835 !important;
   border-radius: 2em !important;
@@ -42,7 +46,7 @@ body {
   font-size: 25px;
   color: white;
   margin: 5px;
-  transition: 0.4s ease;
+  transition: 0.4s linear;
   display: block;
 }
 
@@ -60,10 +64,19 @@ body {
 }
 
 .birdSearch:hover {
-  transition: 2.0s ease !important;
+  transition: .4s linear !important;
   background-color: black !important;
   border: 2px solid #FF9835 !important;
 
 }
 
+form .error-message{
+  display: none;
+  font-size: .8rem;
+  color: red;
+}
+
+form .error-message.show{
+  display:block
+}
 

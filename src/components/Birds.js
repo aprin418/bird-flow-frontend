@@ -5,24 +5,26 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Birds = () => {
   // need to fetch data from API. 
-  const [birds,setBirds] = useState('')
+  const [birds,setBirds] = useState([])
+  
   useEffect(()=>{
     let url = `${REACT_APP_SERVER_URL}/api/search/states`
+    const newBirdArray = []
     axios.get(url)
     .then(response =>{
       // console.log(response.data)
       // console.log(response.data.states)
-      console.log(response.data.states[0])
-      
+      // console.log(response.data.states[0])
       const birdArray = response.data.states[0].birds
-      console.log(birdArray)
-      let newBirdArray = []
+      // setBirds(birdArray)
+      
       for(let i = 0; i < birdArray.length ; i++){
+        let eachBird = birdArray[i]
         console.log(birdArray[i])
-        newBirdArray.push()
-        
-        
+        newBirdArray.push(eachBird)
+        setBirds(<p>{eachBird}</p>)
       }
+      
     })
     .catch(error =>{
       console.log(`!!! ERROR while searching states !!!`)
@@ -33,9 +35,8 @@ const Birds = () => {
   return (
     <div>
       <h1>Birds Page</h1>
-      <ul>
-        
-      </ul>
+      {birds}
+      
     </div>
   )
 }

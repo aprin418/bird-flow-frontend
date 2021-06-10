@@ -48,23 +48,17 @@ const Navbar = (props) => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <span
-                  onClick={props.handleLogout}
-                  className="nav-link logout-link"
-                >
-                  Logout
-                </span>
-              </li>
+                <span onClick={props.handleLogout} className="nav-link logout-link" style={{cursor:"pointer"}}> Logout </span></li>
             </ul>
           ) : (
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <NavLink className="nav-link text-warning" to="/signup">
+                <NavLink className="nav-link" to="/signup">
                   Create Account
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link text-warning" to="/login">
+                <NavLink className="nav-link" to="/login">
                   Login
                 </NavLink>
               </li>

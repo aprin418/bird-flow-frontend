@@ -18,6 +18,7 @@ const Birds = () => {
       console.log(birdArray)
       for(let i = 0; i < birdArray.length ; i++){
         console.log(birdArray[i])
+        <li>[i]</li>
       }
     })
     .catch(error =>{
@@ -29,6 +30,9 @@ const Birds = () => {
   return (
     <div>
       <h1>Birds Page</h1>
+      <ul>
+        
+      </ul>
     </div>
   )
 }

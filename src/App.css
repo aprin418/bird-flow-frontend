@@ -21,6 +21,11 @@ body {
   z-index: 1000;
 }
 
+.nav-link:hover{
+  color:#FFAD84 !important;
+}
+
+
 .video1 {
   position:  absolute !important;
   top: 0 !important;
@@ -58,12 +63,22 @@ body {
 }
 
 .birdSearch:hover {
+
   transition: 0.4s linear !important;
   background-color: black !important;
   border: 2px solid #FF9835 !important;
 
 }
 
+form .error-message{
+  display: none;
+  font-size: .8rem;
+  color: red;
+}
+
+form .error-message.show{
+  display:block
+}
 
 /* about page */
 .about-bg {

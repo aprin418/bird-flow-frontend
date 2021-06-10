@@ -16,9 +16,12 @@ const Birds = () => {
       
       const birdArray = response.data.states[0].birds
       console.log(birdArray)
+      let newBirdArray = []
       for(let i = 0; i < birdArray.length ; i++){
         console.log(birdArray[i])
-        <li>[i]</li>
+        newBirdArray.push()
+        
+        
       }
     })
     .catch(error =>{

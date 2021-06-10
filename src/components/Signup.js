@@ -91,7 +91,7 @@ const Signup = () => {
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <div className={`error-message ${showError ? "show" : ""}`}> Password must be more than 8 characters </div>
+              <div className={`error-message ${showError ? "show" : ""}`}> Password needs to be at least 8 characters or more. </div>
               <input
                 type="password"
                 name="password"

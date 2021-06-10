@@ -56,7 +56,7 @@ const Signup = () => {
     }
   };
   const checkString = ()=>{
-    if (password.length <=8){
+    if (password.length < 8){
       setShowError(true)
     }
   }
@@ -92,8 +92,6 @@ const Signup = () => {
             <div className="form-group">
 
               <label htmlFor="password" className="signuplabel">Password</label>
-
-              <label htmlFor="password">Password</label>
               <div className={`error-message ${showError ? "show" : ""}`}> Password needs to be at least 8 characters or more. </div>
 
               <input
@@ -106,7 +104,7 @@ const Signup = () => {
 
                 onFocus={()=>setShowError(false)}
                 onBlur={()=>checkString()}
-                className="form-control"
+                
               />
             </div>
             <div className="form-group">

@@ -68,7 +68,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar  isAuth={isAuthenticated} handleLogout={handleLogout} />
+      <Navbar  isAuth={isAuthenticated} handleLogout={handleLogout} /> 
       <div className="container mt-5">
       <Switch>
         {/* all of my routes will go inside of here */}
@@ -82,7 +82,7 @@ function App() {
            
       </Switch>
       </div>
-    
+      
       <Footer />
     </div>
   );

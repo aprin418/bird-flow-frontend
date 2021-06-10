@@ -31,10 +31,10 @@ const Navbar = (props) => {
                         </ul>
                         : <ul className="navbar-nav ml-auto"> 
                             <li className="nav-item">
-                                <NavLink className="nav-link text-warning"  to="/signup">Create Account</NavLink> 
+                                <NavLink className="nav-link"  to="/signup">Create Account</NavLink> 
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link text-warning"  to="/login">Login</NavLink>
+                                <NavLink className="nav-link"  to="/login">Login</NavLink>
                             </li>
                           </ul>
                     }

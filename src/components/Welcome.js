@@ -22,6 +22,9 @@ const Welcome = (props) => {
                 </div>
             </form>
 
+            </section>
+          <section>
+            
             <video autoPlay loop muted  className="video1">
              
                 <source src={birdvid} type="video/mp4"/>

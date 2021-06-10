@@ -14,6 +14,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import About from "./components/About";
 import Journal from "./components/Journal";
+import Birds from "./components/Birds";
 
 //Private route component
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -96,6 +97,7 @@ function App() {
             )}
           />
           <Route path="/about" component={About} />
+          <Route path="/birds" component={Birds} />
           <Route exact path="/" component={Welcome} />
           <PrivateRoute
             path="/profile"

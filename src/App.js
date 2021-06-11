@@ -14,8 +14,8 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import About from "./components/About";
 import Journal from "./components/Journal";
-import Birds from "./components/Birds";
-import Explore from './components/Explore';
+// import Birds from "./components/Birds";
+import Explore from "./components/Explore";
 
 //Private route component
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -98,10 +98,10 @@ function App() {
             )}
           />
           <Route path="/about" component={About} />
-          <Route path="/birds" component={Birds} />
+          {/* <Route path="/birds" component={Birds} /> */}
           <Route exact path="/" component={Welcome} />
           {/* the route below is for the results after the the explore butom is clicked */}
-          <Route path="/xplore" component={Explore}/>
+          <Route path="/explore" component={Explore}/>
 
           <PrivateRoute
             path="/profile"

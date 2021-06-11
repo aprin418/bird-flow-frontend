@@ -65,11 +65,14 @@ body {
  border: 4px solid white;
  background-color: unset !important;
  color: white !important;
+ padding: 10px;
+ text-decoration: none;
 }
 
 .exploreButton:hover {
   border: 4px solid #FF9835;
   transition: all 0.2s linear;
+  text-decoration: none;
 
 }
 

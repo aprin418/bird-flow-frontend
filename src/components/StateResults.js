@@ -3,20 +3,18 @@ import axios from "axios";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function StateResults(props) {
-    
+  console.log(props)
   const stateSearchResults = props.history.location.state.results
-  
-  // console.log(stateSearchResults[0].comName)
-
+  const stateAbbreviation = props.history.location.search.replace('?','')
 
   const birdList = stateSearchResults.map((bird, idx) => {
-      return <li key={idx}>{bird.comName}</li>;
+      return <li key={idx}><a href="#">{bird.comName}</a></li>;
     });
   console.log(birdList)
     
   return (
     <div>
-      <h1>Results by state</h1>
+      <h1>All birds in {stateAbbreviation}</h1>
       <ul>{birdList}</ul>
 
     </div>

@@ -26,9 +26,12 @@ const SearchState = (props) => {
         console.log(birdArray);
         props.history?.push({
           pathname:'/stateResults',
+          search:stateSearch,
           state:{
             results:birdArray
           }
+         
+
       })
         // for (let i = 0; i < birdArray.length; i++) {
         //   console.log(birdArray[i].comName);
@@ -45,7 +48,8 @@ const SearchState = (props) => {
     <div className="row mt-4 login-bg">
       <div className="col-md-7 offset-md-3">
         <div className="card card-body cardBorder">
-          <h2 className="py-2 form-name">Enter a state code</h2>
+          <h2 className="py-2 form-name">Search all birds by a state code</h2>
+          <p className="loginlabel">GA, NY, NJ, CT, KY, RI, CA, NV, MT, ID etc</p>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="email" className="loginlabel">

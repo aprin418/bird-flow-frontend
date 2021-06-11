@@ -43,7 +43,7 @@ const Login = (props) => {
     if (props.user) return <Redirect to='/profile' />
 
     return (
-        <div className="row mt-4 login-bg">
+        <div className="login-bg">
             <div className="col-md-7 offset-md-3">
                 <div className="card card-body cardBorder">
                     <h2 className="py-2 form-name">Login</h2>

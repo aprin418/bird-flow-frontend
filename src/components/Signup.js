@@ -29,7 +29,6 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     // check to make sure passwords match
     if (password === confirmPassword && password.length >= 8) {
       const payload = { name, email, password };
@@ -55,6 +54,7 @@ const Signup = () => {
       }
     }
   };
+// WHAT I WROTE
   const checkString = ()=>{
     if (password.length < 8){
       setShowError(true)
@@ -64,7 +64,7 @@ const Signup = () => {
   if (redirect) return <Redirect to="/login" />;
 
   return (
-    <div className="row mt-4 signup-bg">
+    <div className="signup-bg">
       <div className="col-md-7 offset-md-3">
         <div className="card card-body cardBorder2">
           <h2 className="py-2 signupform-name">Signup</h2>

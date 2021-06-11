@@ -17,6 +17,8 @@ import Journal from "./components/Journal";
 import Birds from "./components/Birds";
 import SearchState from "./components/SearchState";
 import StateResults from "./components/StateResults";
+import BirdsList from "./components/BirdsList";
+import States from "./components/States";
 
 //Private route component
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -100,7 +102,8 @@ function App() {
           <Route path="/stateResults" component={StateResults} />
           <Route path="/searchState" component={SearchState} />
           <Route path="/about" component={About} />
-          <Route path="/birds" component={Birds} />
+          <Route path="/states" component={States} />
+          <Route path="/birds" component={BirdsList} />
           <Route exact path="/" component={Welcome} />
           <PrivateRoute
             path="/profile"

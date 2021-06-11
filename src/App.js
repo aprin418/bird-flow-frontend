@@ -17,6 +17,13 @@ import Journal from "./components/Journal";
 // import Birds from "./components/Birds";
 import Explore from "./components/Explore";
 
+import SearchState from "./components/SearchState";
+import StateResults from "./components/StateResults";
+import BirdsList from "./components/BirdsList"
+import States from "./components/States"
+
+
+
 //Private route component
 const PrivateRoute = ({ component: Component, ...rest }) => {
   console.log("----This is a private route-----");
@@ -98,7 +105,11 @@ function App() {
             )}
           />
           <Route path="/about" component={About} />
-          {/* <Route path="/birds" component={Birds} /> */}
+          <Route path="/stateResults" component={StateResults} />
+          <Route path="/searchState" component={SearchState} />
+          <Route path="/states" component={States} />
+          <Route path="/birds" component={BirdsList} />
+
           <Route exact path="/" component={Welcome} />
           {/* the route below is for the results after the the explore butom is clicked */}
           <Route path="/explore" component={Explore}/>

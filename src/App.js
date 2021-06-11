@@ -14,7 +14,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import About from "./components/About";
 import Journal from "./components/Journal";
-import Birds from "./components/Birds";
+// import Birds from "./components/Birds";
 import SearchState from "./components/SearchState";
 import StateResults from "./components/StateResults";
 import BirdsList from "./components/BirdsList";

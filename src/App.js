@@ -15,6 +15,8 @@ import Login from "./components/Login";
 import About from "./components/About";
 import Journal from "./components/Journal";
 import Birds from "./components/Birds";
+import SearchState from "./components/SearchState";
+import StateResults from "./components/StateResults";
 
 //Private route component
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -77,9 +79,8 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar isAuth={isAuthenticated} handleLogout={handleLogout} />
 
-      <Navbar  isAuth={isAuthenticated} handleLogout={handleLogout} /> 
-    
       <div className="container mt-5">
         <Switch>
           {/* all of my routes will go inside of here */}
@@ -96,6 +97,8 @@ function App() {
               />
             )}
           />
+          <Route path="/stateResults" component={StateResults} />
+          <Route path="/searchState" component={SearchState} />
           <Route path="/about" component={About} />
           <Route path="/birds" component={Birds} />
           <Route exact path="/" component={Welcome} />
@@ -113,7 +116,6 @@ function App() {
           />
         </Switch>
       </div>
-      
 
       <Footer />
     </div>

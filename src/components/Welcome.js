@@ -1,7 +1,6 @@
 import React from "react";
 import birdvid from "./videos/birdvid.mp4";
 const Welcome = (props) => {
-
   return (
     <div>
       <section>
@@ -12,7 +11,9 @@ const Welcome = (props) => {
             <input className="birdSearch"></input>
             <label className="HomeSearch">Region</label>
             <input className="birdSearch"></input>
-            <label className="HomeSearch">State</label>
+            <label className="HomeSearch" name="state" value="state">
+              State
+            </label>
             <input className="birdSearch"></input>
             <button className="btn btn-primary specialButton">Submit</button>
           </div>
@@ -28,4 +29,3 @@ const Welcome = (props) => {
 };
 
 export default Welcome;
-

@@ -17,14 +17,8 @@ import Journal from "./components/Journal";
 import Birds from "./components/Birds";
 import SearchState from "./components/SearchState";
 import StateResults from "./components/StateResults";
-<<<<<<< HEAD
 import BirdsList from "./components/BirdsList";
 import States from "./components/States";
-=======
-import BirdsList from "./components/BirdsList"
-import States from "./components/States"
-
->>>>>>> 1c9c9d25b0e9d8ca97dbdb00c82c5bef84c6da2a
 
 //Private route component
 const PrivateRoute = ({ component: Component, ...rest }) => {

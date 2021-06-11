@@ -99,6 +99,9 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/birds" component={Birds} />
           <Route exact path="/" component={Welcome} />
+          {/* rout */}
+          <Route path="/explore-results"/>
+
           <PrivateRoute
             path="/profile"
             component={Profile}

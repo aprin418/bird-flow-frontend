@@ -64,11 +64,13 @@ body {
  border-radius: 2em;
  border: 4px solid white;
  background-color: unset !important;
+ color: white !important;
 }
 
 .exploreButton:hover {
   border: 4px solid #FF9835;
   transition: all 0.2s linear;
+
 }
 
 /* end of header and button */

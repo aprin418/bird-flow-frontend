@@ -14,7 +14,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import About from "./components/About";
 import Journal from "./components/Journal";
-import Birds from "./components/Birds";
+// import Birds from "./components/Birds";
 import SearchState from "./components/SearchState";
 import StateResults from "./components/StateResults";
 import BirdsList from "./components/BirdsList"
@@ -103,7 +103,7 @@ function App() {
           <Route path="/stateResults" component={StateResults} />
           <Route path="/searchState" component={SearchState} />
           <Route path="/about" component={About} />
-         <Route path="/states" component={States} />
+          <Route path="/states" component={States} />
           <Route path="/birds" component={BirdsList} />
           <Route exact path="/" component={Welcome} />
           <PrivateRoute

@@ -1,24 +1,18 @@
 import React from "react";
 import birdvid from "./videos/birdvid.mp4";
 import { Link, animateScroll as scroll } from "react-scroll";
+
 // import React, {browserRouter as Router, Route, Link } from 'react-router-dom';
 
 const Welcome = (props) => {
-
-
-  // let Link = Scroll.Link;
-
-
-
-
-
   return (
     <div className="Home-container">
       <section className="home-section1">
         <div className="top-half-for-home">
         <h1 className="homeheader">Which Bird have you seen today?</h1>
-        <Link className="btn btn-primary exploreButton">Explore</Link>
+        <Link className="btn btn-primary exploreButton" to="/ExploreResults">Explore</Link>
         </div>
+
         <video autoPlay loop muted className="video1">
           <source src={birdvid} type="video/mp4" />
         </video>
@@ -102,4 +96,3 @@ const Welcome = (props) => {
 };
 
 export default Welcome;
-

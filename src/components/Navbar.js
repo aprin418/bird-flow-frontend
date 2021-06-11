@@ -4,7 +4,7 @@ import { NavLink, Link } from 'react-router-dom';
 
 const Navbar = (props) => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-none">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-none nav-opaque" >
             <div className="container">
                 <Link className="navbar-brand" to="/">BFlow</Link> 
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="#navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,10 +31,10 @@ const Navbar = (props) => {
                         </ul>
                         : <ul className="navbar-nav ml-auto"> 
                             <li className="nav-item">
-                                <NavLink className="nav-link text-warning"  to="/signup">Create Account</NavLink> 
+                                <NavLink className="nav-link"  to="/signup">Create Account</NavLink> 
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link text-warning"  to="/login">Login</NavLink>
+                                <NavLink className="nav-link"  to="/login">Login</NavLink>
                             </li>
                           </ul>
                     }

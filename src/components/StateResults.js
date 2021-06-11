@@ -8,11 +8,17 @@ function StateResults(props) {
   
   // console.log(stateSearchResults[0].comName)
 
-
-  const birdList = stateSearchResults.map((bird, idx) => {
-      return <li key={idx}>{bird.comName}</li>;
+  // console.log(stateSearchResults[i].comName);
+    const birdList = stateSearchResults.map((bird, idx) => {
+      return <ul key={idx}>
+      <li> Common name: {bird.comName}</li>
+     <li> Order: {bird.order}</li>
+     <li> Family common name: {bird.familyComeName}</li>
+    <li> Family scientific name: {bird.familySciName} </li>
+    <br></br>
+      </ul>;
     });
-  console.log(birdList)
+    
     
   return (
     <div>

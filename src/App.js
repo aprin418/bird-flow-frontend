@@ -15,10 +15,13 @@ import Login from "./components/Login";
 import About from "./components/About";
 import Journal from "./components/Journal";
 // import Birds from "./components/Birds";
+import Explore from "./components/Explore";
+
 import SearchState from "./components/SearchState";
 import StateResults from "./components/StateResults";
 import BirdsList from "./components/BirdsList"
 import States from "./components/States"
+
 
 
 //Private route component
@@ -82,8 +85,9 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar isAuth={isAuthenticated} handleLogout={handleLogout} />
 
+      <Navbar  isAuth={isAuthenticated} handleLogout={handleLogout} /> 
+    
       <div className="container mt-5">
         <Switch>
           {/* all of my routes will go inside of here */}
@@ -100,12 +104,16 @@ function App() {
               />
             )}
           />
+          <Route path="/about" component={About} />
           <Route path="/stateResults" component={StateResults} />
           <Route path="/searchState" component={SearchState} />
-          <Route path="/about" component={About} />
           <Route path="/states" component={States} />
           <Route path="/birds" component={BirdsList} />
+
           <Route exact path="/" component={Welcome} />
+          {/* the route below is for the results after the the explore butom is clicked */}
+          <Route path="/explore" component={Explore}/>
+
           <PrivateRoute
             path="/profile"
             component={Profile}
@@ -120,6 +128,7 @@ function App() {
           />
         </Switch>
       </div>
+      
 
       <Footer />
     </div>

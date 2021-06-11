@@ -98,7 +98,7 @@ function App() {
             )}
           />
           <Route path="/about" component={About} />
-         <Route path="/states" component={States} />
+          <Route path="/states" component={States} />
           <Route path="/birds" component={BirdsList} />
           <Route exact path="/" component={Welcome} />
           <PrivateRoute

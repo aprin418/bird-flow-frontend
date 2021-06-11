@@ -4,6 +4,9 @@
   font-family: 'Lato', sans-serif;
 }
 
+.nav-opaque{
+  background: rgba(0,0,0,.8) !important
+}
 
 html {
   position: relative;

@@ -4,14 +4,6 @@ import { Link, animateScroll as scroll } from "react-scroll";
 // import React, {browserRouter as Router, Route, Link } from 'react-router-dom';
 
 const Welcome = (props) => {
-
-
-  // let Link = Scroll.Link;
-
-
-
-
-
   return (
     <div className="Home-container">
       <section className="home-section1">
@@ -19,6 +11,7 @@ const Welcome = (props) => {
         <h1 className="homeheader">Which Bird have you seen today?</h1>
         <button className="btn btn-primary exploreButton">Explore</button>
         </div>
+
         <video autoPlay loop muted className="video1">
           <source src={birdvid} type="video/mp4" />
         </video>
@@ -101,4 +94,3 @@ const Welcome = (props) => {
 };
 
 export default Welcome;
-

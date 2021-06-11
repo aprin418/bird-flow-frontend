@@ -1,7 +1,8 @@
 import React from "react";
 import birdvid from "./videos/birdvid.mp4";
-import { Link, animateScroll as scroll } from "react-scroll";
-// import React, {browserRouter as Router, Route, Link } from 'react-router-dom';
+import { LinkScroll, animateScroll as scroll } from "react-scroll";
+import {Link } from 'react-router-dom';
+
 
 const Welcome = (props) => {
   return (
@@ -9,7 +10,7 @@ const Welcome = (props) => {
       <section className="home-section1">
         <div className="top-half-for-home">
         <h1 className="homeheader">Which Bird have you seen today?</h1>
-        <button className="btn btn-primary exploreButton">Explore</button>
+        <Link className="btn-primary exploreButton" to="/explore">Explore</Link>
         </div>
 
         <video autoPlay loop muted className="video1">
@@ -21,6 +22,7 @@ const Welcome = (props) => {
       {/* <main className="homeMain"> */}
 
       <h1 className="h1-for-home-div">Search a bird of your choice</h1>
+      
       <div className="child-div1">
         <form className="bird_search_form">
       

@@ -18,6 +18,12 @@ Under development
 ### Homepage
 ![Homepage Screenshot](img/homepage-screenshot.png)
 
+# Future Considerations
+
+
+List of future additions and considerations here
+
+
 # Credits
 This project is being worked on by the following extraordinary gentlemen:
 * Aaron Prince | [Github](https://github.com/aprin418)

@@ -1,7 +1,7 @@
 import React from "react";
 import birdvid from "./videos/birdvid.mp4";
-import { Link, animateScroll as scroll } from "react-scroll";
-// import React, {browserRouter as Router, Route, Link } from 'react-router-dom';
+import { LinkScroll, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-router-dom";
 
 const Welcome = (props) => {
   return (

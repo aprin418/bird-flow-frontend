@@ -27,7 +27,7 @@ body {
 
 .nav-link {
   color: #FF9835 !important;
-  font-size: 20px;
+  font-size: 25px;
   z-index: 1000;
 }
 
@@ -67,11 +67,16 @@ body {
  border-radius: 2em;
  border: 4px solid white;
  background-color: unset !important;
+ color: white !important;
+ padding: 10px;
+ text-decoration: none;
 }
 
 .exploreButton:hover {
   border: 4px solid #FF9835;
   transition: all 0.2s linear;
+  text-decoration: none;
+
 }
 
 /* end of header and button */
@@ -88,15 +93,18 @@ body {
   margin: 5px;
   transition: 0.4s linear;
   display: block;
+  padding-left: 10px;
 }
 
 .specialButton {
   background-color: black;
   border-radius: 2em;
   margin: 5px;
+  margin-top: 20px;
+  margin-left: 150px;
   color: white;
   font-size: 25px;
-  border: none;
+  border:2px solid #FF9835;
 }
 
 .specialButton:hover {
@@ -110,6 +118,7 @@ body {
   color: white;
   margin-right: 3px;
   font-size: 30px;
+  margin-left: 10px;
 }
 
 .birdSearch:hover {
@@ -302,14 +311,14 @@ form .error-message.show{
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
     width: 200%;
-    height: 93vh;
+    height: 94vh;
     right: 50px;
     margin-left: -115px;
     margin-right: -999px;
     background-size: cover !important;
     position: relative;
     max-width: 100vw;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     /* display: grid;
     grid-template-rows: repeat (2, 1fr);
     gap: 10px; */
@@ -326,15 +335,16 @@ form .error-message.show{
   border: 5px solid black;
   padding: 20px;
   border-radius: 2em;
-  background-color: rgba(0, 0, 0, .8);
+  /* background-color: rgba(0, 0, 0, .8); */
 }
 
 
 .h1-for-home-div {
   font-size: 30px !important;
   color:white !important;
-  display: inline;
-  margin-left: 150px;
+  margin-left: 140px;
+  position: absolute;
+  top: 100px;
 
 }
 
@@ -343,7 +353,7 @@ form .error-message.show{
 .paragraph-home {
   color: white;
   font-size: 30px;
-  display: inline;
+  margin-top: 50px;
 }
 
 
@@ -365,6 +375,10 @@ form .error-message.show{
   padding: 20px;
   margin-top: 100px; 
 }
+
+
+
+/* state results page styling */
 
 
 

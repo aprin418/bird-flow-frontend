@@ -9,35 +9,48 @@ const Birds = () => {
   
   useEffect(()=>{
     let url = `${REACT_APP_SERVER_URL}/api/search/states`
-    const newBirdArray = []
+    
     axios.get(url)
     .then(response =>{
-      // console.log(response.data)
-      // console.log(response.data.states)
-      // console.log(response.data.states[0])
-      const birdArray = response.data.states[0].birds
-      // setBirds(birdArray)
-      
-      for(let i = 0; i < birdArray.length ; i++){
-        let eachBird = birdArray[i]
-        console.log(birdArray[i])
-        newBirdArray.push(eachBird)
-        setBirds(<p>{eachBird}</p>)
-      }
-      
+      setBirds(response.data.states[0].birds)
     })
     .catch(error =>{
       console.log(`!!! ERROR while searching states !!!`)
       console.log(error)
     })
   }, [])
-
+const birdItems = birds.map((bird,index)=>{
+  return <li key={index}>{bird}</li>
+})
   return (
     <div>
-      <h1>Birds Page</h1>
-      {birds}
+      <h1>Birds by State</h1>
+
+      <div class="container-fluid">
+	<div className="row">
+		<div className="col-md-4">
+			<h2>
+				Alabama
+			</h2>		
+			<ul>{birdItems}</ul>
+		</div>
+		<div className="col-md-4">
+			<h2>
+				Alaska
+			</h2>
       
-    </div>
+		</div>
+		<div className="col-md-4">
+			<h2>
+				Arizona
+			</h2>
+		
+		</div>
+	</div>
+</div>
+       
+        
+      </div>
   )
 }
 

@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "../utils/setAuthToken";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect, Link, Route } from "react-router-dom";
+import StateResults from "./StateResults";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const SearchState = (props) => {
@@ -23,14 +24,21 @@ const SearchState = (props) => {
         console.log(response.data.birds);
         const birdArray = response.data.birds;
         console.log(birdArray);
-        for (let i = 0; i < birdArray.length; i++) {
-          console.log(birdArray[i].comName);
-        }
+        props.history?.push({
+          pathname:'/stateResults',
+          state:{
+            results:birdArray
+          }
+      })
+        // for (let i = 0; i < birdArray.length; i++) {
+        //   console.log(birdArray[i].comName);
+        // }
       })
       .catch((error) => {
         console.log(`!!! ERROR while searching states !!!`);
         console.log(error);
       });
+      
   };
 
   return (
@@ -51,13 +59,12 @@ const SearchState = (props) => {
                 className="form-control login-input"
               />
             </div>
-            <Link
-              to="/stateResults"
+            <button
               type="submit"
               className="btn btn-primary float-right login-button"
             >
               Submit
-            </Link>
+            </button>
           </form>
         </div>
       </div>

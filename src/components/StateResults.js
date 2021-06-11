@@ -3,8 +3,10 @@ import axios from "axios";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function StateResults(props) {
-    
+  console.log(props)
   const stateSearchResults = props.history.location.state.results
+  const stateAbbreviation = props.history.location.search.replace('?','')
+
   
   // console.log(stateSearchResults[0].comName)
 
@@ -22,7 +24,7 @@ function StateResults(props) {
     
   return (
     <div>
-      <h1>Results by state</h1>
+      <h1>All birds in {stateAbbreviation}</h1>
       <ul>{birdList}</ul>
 
     </div>

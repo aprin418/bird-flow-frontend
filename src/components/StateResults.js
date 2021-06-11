@@ -23,11 +23,7 @@ function StateResults(props) {
   return (
     <div>
       <h1>Results by state</h1>
-      <ul> 
-       
-       {birdList}
-
-     </ul>
+      <ul>{birdList}</ul>
 
     </div>
   );

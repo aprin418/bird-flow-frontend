@@ -19,6 +19,7 @@ import SearchState from "./components/SearchState";
 import StateResults from "./components/StateResults";
 import BirdsList from "./components/BirdsList";
 import States from "./components/States";
+import MainSearch from "./components/MainSearch";
 
 //Private route component
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -99,6 +100,7 @@ function App() {
               />
             )}
           />
+          <Route path="results" component={MainSearch} />
           <Route path="/stateResults" component={StateResults} />
           <Route path="/searchState" component={SearchState} />
           <Route path="/about" component={About} />

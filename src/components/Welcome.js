@@ -77,7 +77,9 @@ const Welcome = (props) => {
               <option>WI</option>
               <option>WY</option>
             </select>
-            <button className="btn btn-primary specialButton">Submit</button>
+            <button type="submit" className="btn btn-primary specialButton">
+              Submit
+            </button>
           </form>
         </div>
         <div className="child-div2">

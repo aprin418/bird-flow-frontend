@@ -27,8 +27,9 @@ body {
 
 .nav-link {
   color: #FF9835 !important;
-  font-size: 25px;
+  font-size: 20px;
   z-index: 1000;
+  margin-left: 15px;
 }
 
 .nav-link:hover{
@@ -378,7 +379,40 @@ form .error-message.show{
 
 
 
-/* state results page styling */
+/* state results page styling */ 
 
+.birdCard {
+  background: rgba(191, 189, 189, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  height: 200px;
+  width: 200px;
+  z-index: 5px;
+  border-radius: 1em;
+  padding: 10px;
+  /* border: 4px solid rgba(0, 0, 0, 0.3); */
 
+}
 
+.state-results-bg {
+ 
+  position: absolute;
+  width: 100% !important; 
+  height: 80vh !important; 
+  overflow: scroll; 
+  z-index: -1 !important; 
+  color: white; 
+  display: grid !important; 
+  grid-template-columns: repeat(4, 1fr) !important;
+  grid-gap: 3px; 
+  padding: 30px; 
+  
+}
+
+.state-results-bg:nth-child(5n + 1) {
+  grid-template-columns: repeat(4, 1fr);
+} 
+
+.result-ul li {
+    list-style: none;
+}

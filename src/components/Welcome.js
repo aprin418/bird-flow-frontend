@@ -8,7 +8,7 @@ const Welcome = (props) => {
   return (
     <div className="Home-container">
       <section className="home-section1">
-        <div className="top-half-for-home">
+        <div className="container top-half-for-home">
         <h1 className="homeheader">Which Bird have you seen today?</h1>
         <Link className="btn-primary exploreButton" to="/explore">Explore</Link>
         </div>

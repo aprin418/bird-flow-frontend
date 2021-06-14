@@ -88,7 +88,7 @@ function App() {
 
       <Navbar  isAuth={isAuthenticated} handleLogout={handleLogout} /> 
     
-      <div className="container mt-5">
+      <div className="container-fluid p-0">
         <Switch>
           {/* all of my routes will go inside of here */}
           <Route path="/signup" component={Signup} />
@@ -109,7 +109,6 @@ function App() {
           <Route path="/searchState" component={SearchState} />
           <Route path="/states" component={States} />
           <Route path="/birds" component={BirdsList} />
-
           <Route exact path="/" component={Welcome} />
           {/* the route below is for the results after the the explore butom is clicked */}
           <Route path="/explore" component={Explore}/>

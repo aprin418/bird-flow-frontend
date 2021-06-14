@@ -13,19 +13,23 @@ function StateResults(props) {
   const birdList = stateSearchResults.map((bird, idx) => {
     return (
       <ul key={idx}>
-        <li> Common name: {bird.comName}</li>
-        <li> Order: {bird.order}</li>
-        <li> Family common name: {bird.familyComeName}</li>
-        <li> Family scientific name: {bird.familySciName} </li>
+        <div className="birdCard">
+          <li> Common name: {bird.comName}</li>
+          <li> Order: {bird.order}</li>
+          <li> Family common name: {bird.familyComeName}</li>
+          <li> Family scientific name: {bird.familySciName} </li>
+        </div>
         <br></br>
       </ul>
     );
   });
 
   return (
-    <div>
+    <div className="state-results-bg">
       <h1>All birds in {stateAbbreviation}</h1>
-      <ul>{birdList}</ul>
+      <ul className="result-ul">
+        <div className="grid-child">{birdList}</div>
+      </ul>
     </div>
   );
 }

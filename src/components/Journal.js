@@ -40,12 +40,14 @@ function Journal(props) {
           Authorization: currentUser,
           "Content-Type": "application/json",
         },
-        data: {
-          entries: journalEntry,
-          location: birdLocation,
-        },
-      });
-      console.log(updatedJournal);
+        data:{
+          'entries':journalEntry,
+          'location':birdLocation
+        }
+      })
+      console.log(updatedJournal)
+      // props.history.push('/journal')
+      window.location.reload();     
     } catch (error) {
       console.log(error);
     }
@@ -125,8 +127,14 @@ function Journal(props) {
         <h2>Recent entries:</h2>
         <ul>{seeJournal}</ul>
 
-        {/* <div>{displayJournals}</div> */}
-      </div>
+
+    </div>
+    <div className="container">
+      <hr></hr>
+      <h2>Recent entries:</h2>
+      <ul>{seeJournal}</ul>
+    </div>
+
     </>
   );
 }

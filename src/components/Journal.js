@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const currentUser = localStorage.getItem("jwtToken");
@@ -7,15 +8,15 @@ const currentUser = localStorage.getItem("jwtToken");
 function Journal(props) {
   // #### REACT HOOKS ####
 
-  const [userName, setUserName] = useState("");
+  // const [userName, setUserName] = useState('')
   const [journalEntry, setJournalEntry] = useState("");
   const [birdLocation, setBirdLocation] = useState("");
   const [journals, setJournals] = useState([]);
 
-  const changeNameHandler = (e) => {
-    setUserName(e.target.value);
-    console.log(userName);
-  };
+  // const changeNameHandler = e =>{
+  //   setUserName(e.target.value)
+  //   console.log(userName)
+  // }
   const changeJournalHandler = (e) => {
     setJournalEntry(e.target.value);
     console.log(journalEntry);
@@ -25,12 +26,32 @@ function Journal(props) {
     console.log(birdLocation);
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(`Name: ${userName}`);
-    console.log(`Journal Entry: ${journalEntry}`);
-    console.log(`Location: ${birdLocation}`);
+    console.log(currentUser);
+    // console.log(`Journal Entry: ${journalEntry}`)
+    // console.log(`Location: ${birdLocation}`)
+
+    const url = `${REACT_APP_SERVER_URL}/api/journals`;
+    try {
+      const updatedJournal = await axios({
+        method: "post",
+        url: url,
+        headers: {
+          Authorization: currentUser,
+          "Content-Type": "application/json",
+        },
+        data: {
+          entries: journalEntry,
+          location: birdLocation,
+        },
+      });
+      console.log(updatedJournal);
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   useEffect(() => {
     const url = `${REACT_APP_SERVER_URL}/api/journals`;
     console.log(localStorage.getItem("jwtToken"));
@@ -61,16 +82,13 @@ function Journal(props) {
     return (
       <div>
         <li style={{ listStyle: "none" }}>Date: </li>
-        <li style={{ listStyle: "none" }} key={i}>
-          {j.entries}
-        </li>
-        <li style={{ listStyle: "none" }} key={i}>
-          Location: {j.location}
-        </li>
+        <li style={{ listStyle: "none" }}>{j.entries}</li>
+        <li style={{ listStyle: "none" }}>Location: {j.location}</li>
         <br></br>
       </div>
     );
   });
+
   return (
     <>
       <div class="container">
@@ -107,9 +125,11 @@ function Journal(props) {
         <hr></hr>
         <h2>Recent entries:</h2>
         <ul>{seeJournal}</ul>
+
         {/* <div>{displayJournals}</div> */}
       </div>
     </>
   );
 }
+
 export default Journal;

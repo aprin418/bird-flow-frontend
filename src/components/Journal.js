@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import moment from "moment";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const currentUser = localStorage.getItem("jwtToken");
 
@@ -69,7 +70,9 @@ function Journal(props) {
     return (
       <div>
         <li style={{ listStyle: "none" }}> Entry ID: {j._id}</li>
-        <li style={{ listStyle: "none" }}>Date:{j.date} </li>
+        <li style={{ listStyle: "none" }}>
+          Date: {moment(j.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss a")}{" "}
+        </li>
         <li style={{ listStyle: "none" }}>{j.entries}</li>
         <li style={{ listStyle: "none" }}>Location: {j.location}</li>
         <button

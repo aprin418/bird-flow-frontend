@@ -25,13 +25,19 @@ function Journal(props) {
     console.log(birdLocation);
   };
 
+  const deleteEntry = (e) =>{
+    e.preventDefault()
+    console.log()
+  }
+
+
   const submitHandler = async (e) => {
     e.preventDefault();
     console.log(currentUser);
     // console.log(`Journal Entry: ${journalEntry}`)
     // console.log(`Location: ${birdLocation}`)
 
-    const url = `${REACT_APP_SERVER_URL}/api/journals`;
+  const url = `${REACT_APP_SERVER_URL}/api/journals`;
     try {
       const updatedJournal = await axios({
         method: "post",
@@ -64,11 +70,10 @@ function Journal(props) {
       })
       .then((response) => {
         let newJournals = response.data.journal;
-        // console.log(newJournals)
         // console.log(newJournals[0])
         // console.log(newJournals[1])
         setJournals(newJournals);
-        console.log("New journal array from userState");
+        console.log(newJournals);
 
         // setJournals(response.data)
       })
@@ -82,9 +87,11 @@ function Journal(props) {
     //  console.log(j.entries)
     return (
       <div>
-        <li style={{ listStyle: "none" }}>Date: </li>
+        <li style={{ listStyle:'none'}} > Entry ID: {j._id}</li>
+        <li style={{ listStyle: "none" }}>Date:{j.date} </li>
         <li style={{ listStyle: "none" }}>{j.entries}</li>
         <li style={{ listStyle: "none" }}>Location: {j.location}</li>
+        <button type="submit">Delete</button>
         <br></br>
       </div>
     );
@@ -128,11 +135,6 @@ function Journal(props) {
         <ul>{seeJournal}</ul>
 
 
-    </div>
-    <div className="container">
-      <hr></hr>
-      <h2>Recent entries:</h2>
-      <ul>{seeJournal}</ul>
     </div>
 
     </>

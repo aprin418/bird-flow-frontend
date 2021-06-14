@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
-import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const currentUser = localStorage.getItem("jwtToken");
@@ -48,6 +47,9 @@ function Journal(props) {
         }
       })
       console.log(updatedJournal)
+      // props.history.push('/journal')
+      window.location.reload();
+      
     } catch (error) {
       console.log(error)
       
@@ -122,8 +124,6 @@ function Journal(props) {
       <hr></hr>
       <h2>Recent entries:</h2>
       <ul>{seeJournal}</ul>
-      
-      {/* <div>{displayJournals}</div> */}
     </div>
 
     </>

@@ -24,23 +24,10 @@ function Journal(props) {
     });
   };
 
-  const deleteEntry = (e) =>{
-    e.preventDefault()
-    console.log()
-  }
-
 
   const submitHandler = async (e) => {
     e.preventDefault();
-<<<<<<< HEAD
-    console.log(currentUser);
-    // console.log(`Journal Entry: ${journalEntry}`)
-    // console.log(`Location: ${birdLocation}`)
-
-  const url = `${REACT_APP_SERVER_URL}/api/journals`;
-=======
     const url = `${REACT_APP_SERVER_URL}/api/journals`;
->>>>>>> bc1a5de074646c7a42edec87d97f54b91d981de7
     try {
       const updatedJournal = await axios({
         method: "post",
@@ -70,16 +57,7 @@ function Journal(props) {
       })
       .then((response) => {
         let newJournals = response.data.journal;
-<<<<<<< HEAD
-        // console.log(newJournals[0])
-        // console.log(newJournals[1])
         setJournals(newJournals);
-        console.log(newJournals);
-
-        // setJournals(response.data)
-=======
-        setJournals(newJournals);
->>>>>>> bc1a5de074646c7a42edec87d97f54b91d981de7
       })
       .catch((err) => {
         console.log("ERROR in JOURNAL Fetching data from UseEffect");
@@ -90,13 +68,6 @@ function Journal(props) {
   const seeJournal = journals.map((j, i) => {
     return (
       <div>
-<<<<<<< HEAD
-        <li style={{ listStyle:'none'}} > Entry ID: {j._id}</li>
-        <li style={{ listStyle: "none" }}>Date:{j.date} </li>
-        <li style={{ listStyle: "none" }}>{j.entries}</li>
-        <li style={{ listStyle: "none" }}>Location: {j.location}</li>
-        <button type="submit">Delete</button>
-=======
         <li style={{ listStyle: "none" }}> Entry ID: {j._id}</li>
         <li style={{ listStyle: "none" }}>Date:{j.date} </li>
         <li style={{ listStyle: "none" }}>{j.entries}</li>
@@ -108,7 +79,6 @@ function Journal(props) {
         >
           Remove Entry
         </button>
->>>>>>> bc1a5de074646c7a42edec87d97f54b91d981de7
         <br></br>
       </div>
     );
@@ -146,14 +116,7 @@ function Journal(props) {
         <hr></hr>
         <h2>Recent entries:</h2>
         <ul>{seeJournal}</ul>
-<<<<<<< HEAD
-
-
-    </div>
-
-=======
       </div>
->>>>>>> bc1a5de074646c7a42edec87d97f54b91d981de7
     </>
   );
 }

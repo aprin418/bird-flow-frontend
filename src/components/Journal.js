@@ -10,6 +10,9 @@ function Journal(props) {
   const [userName, setUserName] = useState('')
   const [journalEntry, setJournalEntry] = useState('')
   const [birdLocation, setBirdLocation] = useState('')
+  const [journals, setJournals] = useState([])
+
+
 
   const changeNameHandler = e =>{
     setUserName(e.target.value)
@@ -29,9 +32,7 @@ function Journal(props) {
     console.log(`Name: ${userName}`)
     console.log(`Journal Entry: ${journalEntry}`)
     console.log(`Location: ${birdLocation}`)
-    
   }
-
   useEffect(()=>{
     const url = `${REACT_APP_SERVER_URL}/api/journals`
     console.log(localStorage.getItem('jwtToken'))
@@ -41,32 +42,32 @@ function Journal(props) {
       },
     })
     .then(response =>{
-      console.log(response.data.journal[0].entries)
-      console.log(response.data.journal[0].location)
-
-      const responses = response.data.journal.map((j, idx)=>{
-        return (
-          <>
-          <div key={idx}>{j.entries}</div>
-          <div key={idx}>{j.location}</div>
-          </>
-        )
-        
-      })
+      let newJournals = response.data.journal
+      // console.log(newJournals)
+      // console.log(newJournals[0])
+      // console.log(newJournals[1])
+      setJournals(newJournals)
+      console.log('New journal array from userState')
+      
+      // setJournals(response.data)
     }).catch(err =>{
       console.log('ERROR in JOURNAL Fetching data from UseEffect')
       console.log(err)
     })
   }, [])
 
-  const JournalEntries = () =>{
-    return (
-      <>
-      <h1>Your recent entries</h1>
-      {/* <div>{responses}</div> */}
-      </>
-    )
-  }
+   const seeJournal = journals.map((j, i)=>{
+    //  console.log(j.entries)
+     return (
+      <div>
+     <li style={{listStyle:"none"}}>Date: </li>
+     <li style={{listStyle:"none"}} key={i}>{j.entries}</li>
+     <li style={{listStyle:"none"}} key={i}>Location: {j.location}</li>
+     <br></br>
+     </div>
+     )
+   })
+ 
 
   return (
     <>
@@ -93,7 +94,11 @@ function Journal(props) {
       </div>
     </div>
     <div className="container">
-      <JournalEntries />
+      <hr></hr>
+      <h2>Recent entries:</h2>
+      <ul>{seeJournal}</ul>
+      
+      {/* <div>{displayJournals}</div> */}
     </div>
     </>
   );

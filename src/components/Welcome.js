@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import birdvid from "./videos/birdvid.mp4";
 import axios from "axios";
-import { LinkScroll, animateScroll as scroll } from "react-scroll";
 import { Link } from "react-router-dom";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
@@ -56,8 +55,6 @@ const Welcome = (props) => {
       </section>
 
       <div className="homeFormSection">
-        {/* <main className="homeMain"> */}
-
         <h1 className="h1-for-home-div">Search a bird of your choice</h1>
         <div className="child-div1">
           <form className="bird_search_form" onSubmit={handleSubmit}>

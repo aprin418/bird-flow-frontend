@@ -41,9 +41,11 @@ const Welcome = (props) => {
   return (
     <div className="Home-container">
       <section className="home-section1">
-        <div className="top-half-for-home">
+        <div className="container top-half-for-home">
           <h1 className="homeheader">Which Bird have you seen today?</h1>
-          <button className="btn btn-primary exploreButton">Explore</button>
+          <Link className="btn-primary exploreButton" to="/explore">
+            Explore
+          </Link>
         </div>
         <video autoPlay loop muted className="video1">
           <source src={birdvid} type="video/mp4" />
@@ -61,8 +63,8 @@ const Welcome = (props) => {
               className="birdSearch"
               name="nameSearch"
               id="nameSearch"
-              value={this.state.value}
-              onChange={this.props.onChange}
+              value={props.value}
+              onChange={props.onChange}
             />
             <label className="HomeSearch">State</label>
             <select className="birdSearch">

@@ -1,28 +1,27 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const currentUser = localStorage.getItem("jwtToken");
 
 function Journal(props) {
-  // #### REACT HOOKS ####
-
-  // const [userName, setUserName] = useState('')
   const [journalEntry, setJournalEntry] = useState("");
   const [birdLocation, setBirdLocation] = useState("");
   const [journals, setJournals] = useState([]);
-
-  // const changeNameHandler = e =>{
-  //   setUserName(e.target.value)
-  //   console.log(userName)
-  // }
   const changeJournalHandler = (e) => {
     setJournalEntry(e.target.value);
-    console.log(journalEntry);
   };
   const changeBirdLocation = (e) => {
     setBirdLocation(e.target.value);
-    console.log(birdLocation);
+  };
+  const deleteEntry = async (journal) => {
+    await fetch(`${REACT_APP_SERVER_URL}/api/journals/${journal._id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: currentUser,
+      },
+    }).then((res) => {
+      window.location.reload();
+    });
   };
 
   const deleteEntry = (e) =>{
@@ -33,11 +32,15 @@ function Journal(props) {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+<<<<<<< HEAD
     console.log(currentUser);
     // console.log(`Journal Entry: ${journalEntry}`)
     // console.log(`Location: ${birdLocation}`)
 
   const url = `${REACT_APP_SERVER_URL}/api/journals`;
+=======
+    const url = `${REACT_APP_SERVER_URL}/api/journals`;
+>>>>>>> bc1a5de074646c7a42edec87d97f54b91d981de7
     try {
       const updatedJournal = await axios({
         method: "post",
@@ -46,14 +49,12 @@ function Journal(props) {
           Authorization: currentUser,
           "Content-Type": "application/json",
         },
-        data:{
-          'entries':journalEntry,
-          'location':birdLocation
-        }
-      })
-      console.log(updatedJournal)
-      // props.history.push('/journal')
-      window.location.reload();     
+        data: {
+          entries: journalEntry,
+          location: birdLocation,
+        },
+      });
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
@@ -61,7 +62,6 @@ function Journal(props) {
 
   useEffect(() => {
     const url = `${REACT_APP_SERVER_URL}/api/journals`;
-    console.log(localStorage.getItem("jwtToken"));
     axios
       .get(url, {
         headers: {
@@ -70,12 +70,16 @@ function Journal(props) {
       })
       .then((response) => {
         let newJournals = response.data.journal;
+<<<<<<< HEAD
         // console.log(newJournals[0])
         // console.log(newJournals[1])
         setJournals(newJournals);
         console.log(newJournals);
 
         // setJournals(response.data)
+=======
+        setJournals(newJournals);
+>>>>>>> bc1a5de074646c7a42edec87d97f54b91d981de7
       })
       .catch((err) => {
         console.log("ERROR in JOURNAL Fetching data from UseEffect");
@@ -84,14 +88,27 @@ function Journal(props) {
   }, []);
 
   const seeJournal = journals.map((j, i) => {
-    //  console.log(j.entries)
     return (
       <div>
+<<<<<<< HEAD
         <li style={{ listStyle:'none'}} > Entry ID: {j._id}</li>
         <li style={{ listStyle: "none" }}>Date:{j.date} </li>
         <li style={{ listStyle: "none" }}>{j.entries}</li>
         <li style={{ listStyle: "none" }}>Location: {j.location}</li>
         <button type="submit">Delete</button>
+=======
+        <li style={{ listStyle: "none" }}> Entry ID: {j._id}</li>
+        <li style={{ listStyle: "none" }}>Date:{j.date} </li>
+        <li style={{ listStyle: "none" }}>{j.entries}</li>
+        <li style={{ listStyle: "none" }}>Location: {j.location}</li>
+        <button
+          onClick={() => {
+            deleteEntry(j);
+          }}
+        >
+          Remove Entry
+        </button>
+>>>>>>> bc1a5de074646c7a42edec87d97f54b91d981de7
         <br></br>
       </div>
     );
@@ -104,10 +121,6 @@ function Journal(props) {
           <div class="col">
             <h1>Your Journal</h1>
             <form onSubmit={submitHandler}>
-              {/* <div>
-              <label htmlFor="name">Name</label>
-              <input onChange={changeNameHandler} id="name" name="name" ></input>
-            </div> */}
               <div>
                 <label htmlFor="entries">Enter Text</label>
                 <textarea
@@ -133,10 +146,14 @@ function Journal(props) {
         <hr></hr>
         <h2>Recent entries:</h2>
         <ul>{seeJournal}</ul>
+<<<<<<< HEAD
 
 
     </div>
 
+=======
+      </div>
+>>>>>>> bc1a5de074646c7a42edec87d97f54b91d981de7
     </>
   );
 }

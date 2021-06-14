@@ -12,13 +12,10 @@ const SearchState = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let url = `${REACT_APP_SERVER_URL}/api/search/states/US-${stateSearch}`;
-    console.log(stateSearch);
     axios
       .get(url)
       .then((response) => {
-        console.log(response.data.birds);
         const birdArray = response.data.birds;
-        console.log(birdArray);
         props.history?.push({
           pathname: "/stateResults",
           search: stateSearch,

@@ -1,14 +1,18 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const currentUser = localStorage.getItem("jwtToken");
 
 function Journal(props) {
   // #### REACT HOOKS ####
+
   // const [userName, setUserName] = useState('')
   const [journalEntry, setJournalEntry] = useState('')
   const [birdLocation, setBirdLocation] = useState('')
   const [journals, setJournals] = useState([])
+
 
   // const changeNameHandler = e =>{
   //   setUserName(e.target.value)
@@ -48,7 +52,6 @@ function Journal(props) {
       console.log(error)
       
     }
-    
   }
 
 
@@ -88,6 +91,7 @@ function Journal(props) {
    })
  
 
+
   return (
     <>
     <div class="container">
@@ -109,8 +113,10 @@ function Journal(props) {
             </div>
             <button type="submit">Submit</button>
           </form>
+
         </div>
       </div>
+
     </div>
     <div className="container">
       <hr></hr>
@@ -119,6 +125,7 @@ function Journal(props) {
       
       {/* <div>{displayJournals}</div> */}
     </div>
+
     </>
   );
 }

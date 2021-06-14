@@ -19,10 +19,10 @@ import Explore from "./components/Explore";
 
 import SearchState from "./components/SearchState";
 import StateResults from "./components/StateResults";
-import BirdsList from "./components/BirdsList"
-import States from "./components/States"
-
-
+import BirdsList from "./components/BirdsList";
+import States from "./components/States";
+import Results from "./components/Results";
+import WelcomeResults from "./components/Results";
 
 //Private route component
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -85,9 +85,8 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar isAuth={isAuthenticated} handleLogout={handleLogout} />
 
-      <Navbar  isAuth={isAuthenticated} handleLogout={handleLogout} /> 
-    
       <div className="container-fluid p-0">
         <Switch>
           {/* all of my routes will go inside of here */}
@@ -104,14 +103,14 @@ function App() {
               />
             )}
           />
-          <Route path="/about" component={About} />
+          <Route path="/results" component={WelcomeResults} />
           <Route path="/stateResults" component={StateResults} />
           <Route path="/searchState" component={SearchState} />
           <Route path="/states" component={States} />
           <Route path="/birds" component={BirdsList} />
           <Route exact path="/" component={Welcome} />
           {/* the route below is for the results after the the explore butom is clicked */}
-          <Route path="/explore" component={Explore}/>
+          <Route path="/explore" component={Explore} />
 
           <PrivateRoute
             path="/profile"
@@ -127,7 +126,6 @@ function App() {
           />
         </Switch>
       </div>
-      
 
       <Footer />
     </div>

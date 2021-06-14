@@ -1,4 +1,3 @@
-// Imports
 import React, { useState } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
@@ -10,7 +9,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
-  const [showError, setShowError] = useState(false)
+  const [showError, setShowError] = useState(false);
   const handleName = (e) => {
     setName(e.target.value);
   };
@@ -54,12 +53,12 @@ const Signup = () => {
       }
     }
   };
-// WHAT I WROTE
-  const checkString = ()=>{
-    if (password.length < 8){
-      setShowError(true)
+  // WHAT I WROTE
+  const checkString = () => {
+    if (password.length < 8) {
+      setShowError(true);
     }
-  }
+  };
 
   if (redirect) return <Redirect to="/login" />;
 
@@ -70,7 +69,9 @@ const Signup = () => {
           <h2 className="py-2 signupform-name">Signup</h2>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name" className="signuplabel">Name</label>
+              <label htmlFor="name" className="signuplabel">
+                Name
+              </label>
               <input
                 type="text"
                 name="name"
@@ -80,7 +81,9 @@ const Signup = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="email" className="signuplabel">Email</label>
+              <label htmlFor="email" className="signuplabel">
+                Email
+              </label>
               <input
                 type="email"
                 name="email"
@@ -90,25 +93,28 @@ const Signup = () => {
               />
             </div>
             <div className="form-group">
-
-              <label htmlFor="password" className="signuplabel">Password</label>
-              <div className={`error-message ${showError ? "show" : ""}`}> Password needs to be at least 8 characters or more. </div>
+              <label htmlFor="password" className="signuplabel">
+                Password
+              </label>
+              <div className={`error-message ${showError ? "show" : ""}`}>
+                {" "}
+                Password needs to be at least 8 characters or more.{" "}
+              </div>
 
               <input
                 type="password"
                 name="password"
                 value={password}
                 onChange={handlePassword}
-
                 className="form-control signup-input"
-
-                onFocus={()=>setShowError(false)}
-                onBlur={()=>checkString()}
-                
+                onFocus={() => setShowError(false)}
+                onBlur={() => checkString()}
               />
             </div>
             <div className="form-group">
-              <label htmlFor="confirmPassword" className="signuplabel">Confirm Password</label>
+              <label htmlFor="confirmPassword" className="signuplabel">
+                Confirm Password
+              </label>
               <input
                 type="password"
                 name="confirmPassword"
@@ -117,7 +123,10 @@ const Signup = () => {
                 className="form-control signup-input"
               />
             </div>
-            <button type="submit" className="btn btn-primary float-right signup-button">
+            <button
+              type="submit"
+              className="btn btn-primary float-right signup-button"
+            >
               Submit
             </button>
           </form>

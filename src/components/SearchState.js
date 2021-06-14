@@ -1,10 +1,5 @@
-// Imports
 import React, { useState } from "react";
 import axios from "axios";
-import jwt_decode from "jwt-decode";
-import setAuthToken from "../utils/setAuthToken";
-import { Redirect, Link, Route } from "react-router-dom";
-import StateResults from "./StateResults";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const SearchState = (props) => {
@@ -25,23 +20,17 @@ const SearchState = (props) => {
         const birdArray = response.data.birds;
         console.log(birdArray);
         props.history?.push({
-          pathname:'/stateResults',
-          search:stateSearch,
-          state:{
-            results:birdArray
-          }
-         
-
-      })
-        // for (let i = 0; i < birdArray.length; i++) {
-        //   console.log(birdArray[i].comName);
-        // }
+          pathname: "/stateResults",
+          search: stateSearch,
+          state: {
+            results: birdArray,
+          },
+        });
       })
       .catch((error) => {
         console.log(`!!! ERROR while searching states !!!`);
         console.log(error);
       });
-      
   };
 
   return (
@@ -49,7 +38,9 @@ const SearchState = (props) => {
       <div className="col-md-7 offset-md-3">
         <div className="card card-body cardBorder">
           <h2 className="py-2 form-name">Search all birds by a state code</h2>
-          <p className="loginlabel">GA, NY, NJ, CT, KY, RI, CA, NV, MT, ID etc</p>
+          <p className="loginlabel">
+            GA, NY, NJ, CT, KY, RI, CA, NV, MT, ID etc
+          </p>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="email" className="loginlabel">

@@ -1,4 +1,5 @@
 import axios from "axios";
+import React, {useState, useEffect} from "react";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
@@ -7,33 +8,53 @@ const currentUser = localStorage.getItem("jwtToken");
 function Journal(props) {
   // #### REACT HOOKS ####
 
-  const [userName, setUserName] = useState('')
+  // const [userName, setUserName] = useState('')
   const [journalEntry, setJournalEntry] = useState('')
   const [birdLocation, setBirdLocation] = useState('')
   const [journals, setJournals] = useState([])
 
 
-
-  const changeNameHandler = (e) => {
-    setUserName(e.target.value);
-    console.log(userName);
-  };
-  const changeJournalHandler = (e) => {
-    setJournalEntry(e.target.value);
-    console.log(journalEntry);
-  };
-  const changeBirdLocation = (e) => {
-    setBirdLocation(e.target.value);
-    console.log(birdLocation);
-  };
-
-
-  const submitHandler = e =>{
-    e.preventDefault()
-    console.log(`Name: ${userName}`)
-    console.log(`Journal Entry: ${journalEntry}`)
-    console.log(`Location: ${birdLocation}`)
+  // const changeNameHandler = e =>{
+  //   setUserName(e.target.value)
+  //   console.log(userName)
+  // }
+  const changeJournalHandler = e =>{
+    setJournalEntry(e.target.value)
+    console.log(journalEntry)
   }
+  const changeBirdLocation = e =>{
+    setBirdLocation(e.target.value)    
+    console.log(birdLocation)
+  }
+
+  const submitHandler = async e =>{
+    e.preventDefault() 
+    console.log(currentUser)
+    // console.log(`Journal Entry: ${journalEntry}`)
+    // console.log(`Location: ${birdLocation}`)
+    
+    const url = `${REACT_APP_SERVER_URL}/api/journals`
+    try {
+      const updatedJournal = await axios( {
+        method:'post',
+        url:url,
+        headers:{
+          'Authorization': currentUser,
+          'Content-Type': 'application/json'
+        },
+        data:{
+          'entries':journalEntry,
+          'location':birdLocation
+        }
+      })
+      console.log(updatedJournal)
+    } catch (error) {
+      console.log(error)
+      
+    }
+  }
+
+
   useEffect(()=>{
     const url = `${REACT_APP_SERVER_URL}/api/journals`
     console.log(localStorage.getItem('jwtToken'))
@@ -62,8 +83,8 @@ function Journal(props) {
      return (
       <div>
      <li style={{listStyle:"none"}}>Date: </li>
-     <li style={{listStyle:"none"}} key={i}>{j.entries}</li>
-     <li style={{listStyle:"none"}} key={i}>Location: {j.location}</li>
+     <li style={{listStyle:"none"}} >{j.entries}</li>
+     <li style={{listStyle:"none"}} >Location: {j.location}</li>
      <br></br>
      </div>
      )
@@ -73,38 +94,26 @@ function Journal(props) {
 
   return (
     <>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <h1>Your Journal</h1>
-            <form onSubmit={submitHandler}>
-              <div>
-                <label htmlFor="name">Name</label>
-                <input
-                  onChange={changeNameHandler}
-                  id="name"
-                  name="name"
-                ></input>
-              </div>
-              <div>
-                <label htmlFor="entries">Enter Text</label>
-                <textarea
-                  onChange={changeJournalHandler}
-                  id="entries"
-                  name="entries"
-                ></textarea>
-              </div>
-              <div>
-                <label htmlFor="location">Location of Bird</label>
-                <input
-                  onChange={changeBirdLocation}
-                  id="location"
-                  name="location"
-                ></input>
-              </div>
-              <button type="submit">Submit</button>
-            </form>
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Your Journal</h1>
+          <form onSubmit={submitHandler}>
+            {/* <div>
+              <label htmlFor="name">Name</label>
+              <input onChange={changeNameHandler} id="name" name="name" ></input>
+            </div> */}
+            <div>
+              <label htmlFor="entries">Enter Text</label>
+              <textarea onChange={changeJournalHandler} id="entries" name="entries"></textarea>
+            </div>
+            <div>
+              <label htmlFor="location">Location of Bird</label>
+              <input onChange={changeBirdLocation} id="location" name="location" ></input>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+
         </div>
       </div>
 

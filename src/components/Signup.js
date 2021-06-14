@@ -28,7 +28,6 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // check to make sure passwords match
     if (password === confirmPassword && password.length >= 8) {
       const payload = { name, email, password };
       let url = `${REACT_APP_SERVER_URL}/api/users/signup`;
@@ -53,7 +52,6 @@ const Signup = () => {
       }
     }
   };
-  // WHAT I WROTE
   const checkString = () => {
     if (password.length < 8) {
       setShowError(true);

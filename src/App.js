@@ -109,7 +109,6 @@ function App() {
           <Route path="/searchState" component={SearchState} />
           <Route path="/states" component={States} />
           <Route path="/birds" component={BirdsList} />
-
           <Route exact path="/" component={Welcome} />
           {/* the route below is for the results after the the explore butom is clicked */}
           <Route path="/explore" component={Explore}/>

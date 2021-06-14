@@ -10,14 +10,17 @@ const Welcome = (props) => {
   const [nameSearch, setNameSearch] = useState("");
 
   const handleWelcomeSearch = (e) => {
-    setStateSearch(e.target.value);
     setNameSearch(e.target.value);
   };
 
+  const handleStateSearch = (e) => {
+    setStateSearch(e.target.value);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     let url = `${REACT_APP_SERVER_URL}/api/search/birds/${nameSearch}/US-${stateSearch}`;
     console.log(stateSearch);
+    console.log(nameSearch);
     axios
       .get(url)
       .then((response) => {
@@ -64,10 +67,10 @@ const Welcome = (props) => {
               name="nameSearch"
               id="nameSearch"
               value={props.value}
-              onChange={props.onChange}
+              onChange={handleWelcomeSearch}
             />
             <label className="HomeSearch">State</label>
-            <select className="birdSearch">
+            <select className="birdSearch" onChange={handleStateSearch}>
               <option value="AL">AL</option>
               <option value="AK">AK</option>
               <option value="AZ">AZ</option>

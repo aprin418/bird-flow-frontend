@@ -1,12 +1,12 @@
 import axios from "axios";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const currentUser = localStorage.getItem("jwtToken");
 
-
 function Journal(props) {
   // #### REACT HOOKS ####
+
   const [userName, setUserName] = useState('')
   const [journalEntry, setJournalEntry] = useState('')
   const [birdLocation, setBirdLocation] = useState('')
@@ -14,18 +14,19 @@ function Journal(props) {
 
 
 
-  const changeNameHandler = e =>{
-    setUserName(e.target.value)
-    console.log(userName)
-  }
-  const changeJournalHandler = e =>{
-    setJournalEntry(e.target.value)
-    console.log(journalEntry)
-  }
-  const changeBirdLocation = e =>{
-    setBirdLocation(e.target.value)    
-    console.log(birdLocation)
-  }
+  const changeNameHandler = (e) => {
+    setUserName(e.target.value);
+    console.log(userName);
+  };
+  const changeJournalHandler = (e) => {
+    setJournalEntry(e.target.value);
+    console.log(journalEntry);
+  };
+  const changeBirdLocation = (e) => {
+    setBirdLocation(e.target.value);
+    console.log(birdLocation);
+  };
+
 
   const submitHandler = e =>{
     e.preventDefault()
@@ -69,29 +70,44 @@ function Journal(props) {
    })
  
 
+
   return (
     <>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <h1>Your Journal</h1>
-          <form onSubmit={submitHandler}>
-            <div>
-              <label htmlFor="name">Name</label>
-              <input onChange={changeNameHandler} id="name" name="name" ></input>
-            </div>
-            <div>
-              <label htmlFor="entries">Enter Text</label>
-              <textarea onChange={changeJournalHandler} id="entries" name="entries"></textarea>
-            </div>
-            <div>
-              <label htmlFor="location">Location of Bird</label>
-              <input onChange={changeBirdLocation} id="location" name="location" ></input>
-            </div>
-            <button type="submit">Submit</button>
-          </form>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1>Your Journal</h1>
+            <form onSubmit={submitHandler}>
+              <div>
+                <label htmlFor="name">Name</label>
+                <input
+                  onChange={changeNameHandler}
+                  id="name"
+                  name="name"
+                ></input>
+              </div>
+              <div>
+                <label htmlFor="entries">Enter Text</label>
+                <textarea
+                  onChange={changeJournalHandler}
+                  id="entries"
+                  name="entries"
+                ></textarea>
+              </div>
+              <div>
+                <label htmlFor="location">Location of Bird</label>
+                <input
+                  onChange={changeBirdLocation}
+                  id="location"
+                  name="location"
+                ></input>
+              </div>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
         </div>
       </div>
+
     </div>
     <div className="container">
       <hr></hr>
@@ -100,6 +116,7 @@ function Journal(props) {
       
       {/* <div>{displayJournals}</div> */}
     </div>
+
     </>
   );
 }

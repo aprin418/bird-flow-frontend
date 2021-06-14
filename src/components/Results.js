@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
-function StateResults(props) {
+function WelcomeResults(props) {
   console.log(props);
   const stateSearchResults = props.history.location.state.results;
   const stateAbbreviation = props.history.location.search.replace("?", "");
@@ -34,4 +34,4 @@ function StateResults(props) {
   );
 }
 
-export default StateResults;
+export default WelcomeResults;

@@ -429,4 +429,56 @@ body::-webkit-scrollbar-thumb {
   background: #FF9835;
 }
 
+/* journal page customization */
+
+.j-area {
+  background-color: #FF9835;
+  border-radius: 1em;
+  outline: none;
+  border: none;
+  color: white;
+}
+
+.j-area:hover {
+      background: black;
+      border: 2px solid #FF9835;
+      transition: all 0.2s linear;
+
+}
+
+
+.j-submit {
+  border-radius: 2em;
+  background: black;
+  border: none;
+  outline: none;
+}
+
+.j-submit:hover {
+  background-color: #FF9835;
+  border: 2px solid black;
+  transition: all 0.2s linear;
+  color:black;
+}
+
+
+.j-label {
+   margin-right: 5px;
+   color: #FF9835;
+}
+
+.j-form {
+  margin-left: 30px;
+}
+
+.j-head {
+  /* position: absolute; */
+  margin-left: 600px;
+  margin-bottom: 100px;
+  margin-top: 30px;
+}
+
+
+
+
 

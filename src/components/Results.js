@@ -21,7 +21,8 @@ function WelcomeResults(props) {
 
   return (
     <div className="state-results-bg">
-      <h1>All birds in {stateAbbreviation}</h1>
+      <p className="h3" style={{color:'black'}}>Results for {stateAbbreviation}, results total: {props.history.length}</p>
+      
       <ul className="result-ul">
         <div className="grid-child">{birdList}</div>
       </ul>

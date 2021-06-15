@@ -3,6 +3,8 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function WelcomeResults(props) {
   console.log(props);
+  const birdCountLength = props.history.location.state.results
+  const totalBirds = birdCountLength.length
   const stateSearchResults = props.history.location.state.results;
   const stateAbbreviation = props.history.location.search.replace("?", "");
   const birdList = stateSearchResults.map((bird, idx) => {
@@ -21,7 +23,7 @@ function WelcomeResults(props) {
 
   return (
     <div className="state-results-bg">
-      <p className="h3" style={{color:'black'}}>Results for {stateAbbreviation}, results total: {props.history.length}</p>
+      <p className="h3" style={{color:'black'}}>Results for {stateAbbreviation}, results total: {totalBirds}</p>
       
       <ul className="result-ul">
         <div className="grid-child">{birdList}</div>

@@ -417,4 +417,16 @@ form .error-message.show{
     list-style: none;
 }
 
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #FF9835;
+}
+
 

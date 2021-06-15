@@ -69,7 +69,6 @@ function Journal(props) {
   const seeJournal = journals.map((j, i) => {
     return (
       <div>
-        <li style={{ listStyle: "none" }}> Entry ID: {j._id}</li>
         <li style={{ listStyle: "none" }}>
           Date: {moment(j.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss a")}{" "}
         </li>
@@ -79,6 +78,7 @@ function Journal(props) {
           onClick={() => {
             deleteEntry(j);
           }}
+          className=" btn btn-primary j-submit"
         >
           Remove Entry
         </button>
@@ -89,28 +89,30 @@ function Journal(props) {
 
   return (
     <>
-      <div class="container">
+      <div class="container" className="j-background">
         <div class="row">
           <div class="col">
-            <h1>Your Journal</h1>
-            <form onSubmit={submitHandler}>
+            <h1 className="j-head">Your Journal</h1>
+            <form onSubmit={submitHandler} className="j-form">
               <div>
-                <label htmlFor="entries">Enter Text</label>
+                <label htmlFor="entries" className="j-label">Comment:</label>
                 <textarea
                   onChange={changeJournalHandler}
                   id="entries"
                   name="entries"
+                  className="j-area"
                 ></textarea>
               </div>
               <div>
-                <label htmlFor="location">Location of Bird</label>
+                <label htmlFor="location" className="j-label">Location of Bird:</label>
                 <input
                   onChange={changeBirdLocation}
                   id="location"
                   name="location"
+                  className="j-area"
                 ></input>
               </div>
-              <button type="submit">Submit</button>
+              <button type="submit" className=" btn btn-primary j-submit">Submit</button>
             </form>
           </div>
         </div>

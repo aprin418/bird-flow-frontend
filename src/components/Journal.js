@@ -25,6 +25,7 @@ function Journal(props) {
     });
   };
 
+
   const submitHandler = async (e) => {
     e.preventDefault();
     const url = `${REACT_APP_SERVER_URL}/api/journals`;

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Welcome = (props) => {
-  const [stateSearch, setStateSearch] = useState("");
+  const [stateSearch, setStateSearch] = useState("AL");
   const [nameSearch, setNameSearch] = useState("");
 
   const handleWelcomeSearch = (e) => {
@@ -67,7 +67,7 @@ const Welcome = (props) => {
               onChange={handleWelcomeSearch}
             />
             <label className="HomeSearch">State</label>
-            <select className="birdSearch" onChange={handleStateSearch}>
+            <select className="birdSearch" onChange={handleStateSearch} onFocus={(e)=>{console.log(e.target.value)}}>
               <option value="AL">AL</option>
               <option value="AK">AK</option>
               <option value="AZ">AZ</option>

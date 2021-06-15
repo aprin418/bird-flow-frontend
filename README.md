@@ -49,13 +49,8 @@ const changeNameHandler = (e) => {
     })
     .then(response =>{
       let newJournals = response.data.journal
-      // console.log(newJournals)
-      // console.log(newJournals[0])
-      // console.log(newJournals[1])
-      setJournals(newJournals)
       console.log('New journal array from userState')
-      
-      // setJournals(response.data)
+
     }).catch(err =>{
       console.log('ERROR in JOURNAL Fetching data from UseEffect')
       console.log(err)
@@ -79,6 +74,9 @@ Under development
 ## Screenshots
 ### Homepage
 ![Homepage Screenshot](img/homepage-screenshot.png)
+### Homepage search form
+![Homepage search form](img/homepage-birdsearch.png)
+
 
 # Future Considerations
 
@@ -89,7 +87,7 @@ List of future additions and considerations here
 # Credits
 This project is being worked on by the following extraordinary gentlemen:
 * Aaron Prince | [Github](https://github.com/aprin418)
-* Chris Rachel | [Github](https://github.com/chrisrachal)
+* Chris Rachal | [Github](https://github.com/chrisrachal)
 * Maurice Chevez | [Github](https://github.com/mauricechevez)
 * Sebastian Gayle | [Github](https://github.com/Purplepro)
 * Shawn Dunn | [Github](https://github.com/jshawndunn)

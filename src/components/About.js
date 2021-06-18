@@ -10,7 +10,7 @@ const About = () => {
               <div className="about-paragraph card card-body cardBorder-about">
               <h1>About Bird Flow 🐦</h1>
               <p>
-              Bird Flow is a site for bird lovers. Our goal is to enable you to easily document your bird watching experiences. Easily create a journal, and upload pictures of beautiful birds you've seen.
+              Bird Flow is a site for bird lovers. Our goal is to enable you to document your bird watching experiences. Easily create a journal, and upload pictures of beautiful birds you've seen.
               <br />
               <br />
               Need ideas? Discover birds you never heard of by using our <a href="/">Explore</a> page!

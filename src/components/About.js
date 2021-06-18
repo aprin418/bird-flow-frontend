@@ -20,35 +20,35 @@ const About = () => {
               <div className="container mt-1">
                   <div className="row mt-0" style={{background:"rgba(0,0,0,.5)", borderRadius:"20px"}}>
                   <div className="col-sm text-center about-name">Aaron Prince
-                    <div className="text-center">
+                    <div className="text-center mt-2">
                       <a href="https://github.com/aprin418" target="_blank" rel="noreferrer"><img src={GithubLogo} alt="Github Link for Aaron Prince"/>
                         <div>Github</div> 
                       </a>
                     </div>
                   </div>
                   <div className="col-sm text-center about-name">Chris Rachal
-                    <div className="text-center">
+                    <div className="text-center mt-2">
                       <a href="https://github.com/chrisrachal" target="_blank" rel="noreferrer"><img src={GithubLogo} alt="Github Link for Chris Rachal"/>
                         <div>Github</div> 
                       </a>
                     </div>
                   </div>
                   <div className="col-sm text-center about-name">Maurice Chevez
-                    <div className="text-center">
+                    <div className="text-center mt-2">
                       <a href="https://github.com/mauricechevez" target="_blank" rel="noreferrer"><img src={GithubLogo} alt="Github Link for Maurice Chevez"/>
                         <div>Github</div> 
                       </a>
                     </div>
                   </div>
                   <div className="col-sm text-center about-name">Sebastian Gayle
-                    <div className="text-center">
+                    <div className="text-center mt-2">
                       <a href="https://github.com/Purplepro" target="_blank" rel="noreferrer"><img src={GithubLogo} alt="Github Link for Sebastian Gayle"/>
                         <div>Github</div> 
                       </a>
                     </div>
                   </div>
                   <div className="col-sm text-center about-name">Shawn Dunn
-                    <div className="text-center">
+                    <div className="text-center mt-2">
                       <a href="https://github.com/jshawndunn" target="_blank" rel="noreferrer"><img src={GithubLogo} alt="Github Link for Shawn Dunn"/>
                         <div>Github</div> 
                       </a>

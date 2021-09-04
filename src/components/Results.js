@@ -12,7 +12,7 @@ function WelcomeResults(props) {
           <li> Common name: {bird.comName}</li>
           <li> Order: {bird.order}</li>
           <li> Family common name: {bird.familyComeName}</li>
-          <li> Family scientific name: {bird.familySciName} </li>
+          <li> Family scientific name: {bird.familySciName}</li>
         </div>
         <br></br>
       </ul>

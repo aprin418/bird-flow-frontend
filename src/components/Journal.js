@@ -46,7 +46,7 @@ function Journal(props) {
       console.log(error);
     }
   };
-
+      console.log('getting data')
   useEffect(() => {
     const url = `${REACT_APP_SERVER_URL}/api/journals`;
     axios
@@ -58,10 +58,12 @@ function Journal(props) {
       .then((response) => {
         let newJournals = response.data.journal;
         setJournals(newJournals);
+          
       })
       .catch((err) => {
         console.log("ERROR in JOURNAL Fetching data from UseEffect");
         console.log(err);
+
       });
   }, []);
 
@@ -103,7 +105,7 @@ function Journal(props) {
                 ></textarea>
               </div>
               <div>
-                <label htmlFor="location" className="j-label">Location of Bird:</label>
+                <label htmlFor="location" className="j-label">Location of Bird:</label>  
                 <input
                   onChange={changeBirdLocation}
                   id="location"
@@ -111,7 +113,7 @@ function Journal(props) {
                   className="j-area"
                 ></input>
               </div>
-              <button type="submit" className=" btn btn-primary j-submit">Submit</button>
+              <button type="submit" className=" btn btn-primary j-submit">Submit</button> 
             </form>
           </div>
         </div>
